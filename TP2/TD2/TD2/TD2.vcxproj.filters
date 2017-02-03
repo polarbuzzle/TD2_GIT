@@ -30,6 +30,9 @@
     <ClCompile Include="Specialite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="commentaires.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Const.h">

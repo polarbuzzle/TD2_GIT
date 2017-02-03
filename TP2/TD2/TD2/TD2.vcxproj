@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="commentaires.cpp" />
     <ClCompile Include="Infirmier.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Medecin.cpp" />
