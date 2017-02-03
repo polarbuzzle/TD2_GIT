@@ -14,17 +14,24 @@ public:
 	std::string obtenirNom() const; 
 	std::string obtenirPrenom() const;
 	unsigned int obtenirNbChambre() const;
+	std::string Infirmier::obtenirNomComplet() const;
 
 	void modifierNom(const std::string& nom);
 	void modifierPrenom(const std::string& prenom);
 	void modifierNbChambre(unsigned int nbChambre);
 
-	void information() const; // A MODIFIER... (si necessaire)
+	void information(const Infirmier& infirmier) const; // A MODIFIER... (si necessaire)
+	
+	bool operator==(const Infirmier& infirmier) const;
+	bool operator==(const std::string& nomComplet) const;
+	friend bool operator==(const std::string& nomComplet, const Infirmier& infirmier);
 
 private:
 	std::string nom_;
 	std::string prenom_;
 	unsigned int nbChambre_;
 };
+
+std::ostream& operator<<(std::ostream& o, const Infirmier& infirmier);
 
 #endif

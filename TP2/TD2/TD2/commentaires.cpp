@@ -22,7 +22,7 @@ Medecin::Medecin() {
 *Fonctions:		Medecin::Medecin
 *Descriptions:	Constructeur par défaut. Construit l'objet Specialite aves ses parametres
 *Parametre:		-(string)nom : nom du medecin (IN)
--(int)horaires : nombres d'heures associé au medecin (IN)
+				-(int)horaires : nombres d'heures associé au medecin (IN)
 -(Specialite*) : Specilité du medecin (IN)
 *Retour:		Aucun
 *********************************************/
