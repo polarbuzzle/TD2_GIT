@@ -8,6 +8,7 @@
 *Descriptions:	Construit l'objet Infirmier aves ses valeurs par defauts
 *Parametre:		Aucun
 *Retour:		Aucun
+*
 *********************************************/
 Infirmier::Infirmier()
 {
