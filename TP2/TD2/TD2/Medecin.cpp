@@ -2,6 +2,20 @@
 #include <iostream>
 #include <iomanip>
 #include "Const.h"
+/**********************************************
+* Titre: Travail pratique #1 - Medecin.cpp
+* Date: 10 janvier 2017
+* Auteur: FERRON Samuel, FONTAINE Jean-Frederic
+*Description: Implémentation de la classe Medecin
+*********************************************/
+//using namespace std; 
+
+/*********************************************
+*Fonctions:		Constructeur par default
+*Descriptions:		Construit l'objet Medecin aves ses valeurs par defauts
+*Parametre:			Aucun
+*Retour:			Aucun
+*********************************************/
 
 Medecin::Medecin(const string& nom): nom_(nom), horaires_(0)
 {
@@ -9,8 +23,19 @@ Medecin::Medecin(const string& nom): nom_(nom), horaires_(0)
 
 Medecin::Medecin(const string& nom, int horaires, Specialite* specialite): nom_(nom), horaires_(horaires), specialite_(specialite)
 {
+
 }
 
+Medecin::Medecin(const Medecin& copie) {
+	nom_ = copie.nom_;
+	horaires_ = copie.horaires_;
+	specialite_ = new Specialite; 
+	*specialite_ = *copie.specialite_;
+
+	
+
+
+}
 Medecin::~Medecin() // A MODIFIER... (si necessaire)
 {
 	
