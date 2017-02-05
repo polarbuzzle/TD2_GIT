@@ -17,7 +17,6 @@ class Medecin
 public:
 	// Constructeurs par parametre
 	Medecin(const Medecin& copie); // A MODIFIER... (si necessaire)
-	Medecin(const string& nom);
 	Medecin(const string& nom, int horaires, Specialite* specialite); // A MODIFIER... (si necessaire)
 	// Destructeur
 	~Medecin(); // A MODIFIER... (si necessaire)
@@ -33,12 +32,12 @@ public:
 	void modifierSpecialite(Specialite* specialite);
 
 	//surcharge d'opérateur 
-	Medecin& operator=(Medecin& gauche); 
+	Medecin& operator=(const Medecin& gauche); 
 	friend bool operator==(string nom, const Medecin& medecin ) ;
 	bool operator==(const string& nom2) const;
-
 	
-	void information() const; // A MODIFIER... (si necessaire)
+	
+	//void information() const; // A MODIFIER... (si necessaire)
 private:
 	// Variables privees
 	string nom_;
@@ -49,4 +48,5 @@ private:
 //Surcharge doperateur 
 ostream& operator<<(ostream& o, const Medecin& medecin);
 bool operator==(const Medecin& medecin1, const Medecin& medecin2);
+
 #endif
