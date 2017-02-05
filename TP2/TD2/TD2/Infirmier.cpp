@@ -27,9 +27,6 @@ Infirmier::Infirmier()
 *********************************************/
 Infirmier::Infirmier(const std::string & nom, const std::string & prenom, unsigned int nbChambre): nom_(nom), prenom_(prenom), nbChambre_(nbChambre)
 {
-	nom_ = nom;
-	prenom_ = prenom;
-	nbChambre_ = nbChambre;
 }
 
 /*********************************************
@@ -170,10 +167,10 @@ bool operator==(const std::string& nomComplet, const Infirmier& infirmier)
 	return estEgal;
 }
 
-void Infirmier::information(const Infirmier& infirmier) const // A MODIFIER... (si necessaire)
-{
-	std::cout << "| " << infirmier.obtenirNomComplet() << AFFICHER_ESPACE(espace_nom - infirmier.obtenirNom().size());
-	std::cout << " | " << AFFICHER_ESPACE(espace_chambre - std::to_string(infirmier.nbChambre_).size()/2);
-	std::cout << infirmier.nbChambre_ << AFFICHER_ESPACE(espace_chambre);
-	std::cout << "|" << std::endl;
-}
+//void Infirmier::information(const Infirmier& infirmier) const // A MODIFIER... (si necessaire)
+//{
+//	std::cout << "| " << infirmier.obtenirNomComplet() << AFFICHER_ESPACE(espace_nom - infirmier.obtenirNom().size());
+//	std::cout << " | " << AFFICHER_ESPACE(espace_chambre - std::to_string(infirmier.nbChambre_).size()/2);
+//	std::cout << infirmier.nbChambre_ << AFFICHER_ESPACE(espace_chambre);
+//	std::cout << "|" << std::endl;
+//}

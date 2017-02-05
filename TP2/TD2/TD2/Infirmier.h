@@ -20,7 +20,7 @@ public:
 	void modifierPrenom(const std::string& prenom);
 	void modifierNbChambre(unsigned int nbChambre);
 
-	void information(const Infirmier& infirmier) const; // A MODIFIER... (si necessaire)
+	//void information(const Infirmier& infirmier) const; // A MODIFIER... (si necessaire)
 	
 	bool operator==(const Infirmier& infirmier) const;
 	bool operator==(const std::string& nomComplet) const;
