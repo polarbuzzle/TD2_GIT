@@ -30,6 +30,7 @@ public:
 	void modifierNom(const string& nom);
 	void modifierHoraires(int horaires);
 	void modifierSpecialite(Specialite* specialite);
+	void information()const; 
 
 	//surcharge d'opérateur 
 	Medecin& operator=(const Medecin& gauche); 

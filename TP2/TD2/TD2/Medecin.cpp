@@ -8,7 +8,6 @@
 #include <iostream>
 #include <iomanip>
 #include "Const.h"
-using namespace std; 
 /*********************************************
 *Fonctions:		Constructeur par default
 *Descriptions:	Construit l'objet Medecin aves les paramètres entrés
@@ -101,14 +100,14 @@ void Medecin::modifierSpecialite(Specialite* specialite)
 	specialite_ = specialite;
 }
 
-//void Medecin::information() const
-//{
-//	std::cout << "| " << medecin.nom_ << AFFICHER_ESPACE(espace_nom - medecin.nom_.size());
-//	std::cout << " | " << AFFICHER_ESPACE(espace_horaires - std::to_string(medecin.horaires_).size()) << medecin.horaires_;
-//	std::cout << AFFICHER_ESPACE(espace_horaires);
-//	medecin.obtenirSpecialite().information();
-//	std::cout << endl;
-//}
+void Medecin::information() const
+{
+	std::cout << "| " << nom_ << AFFICHER_ESPACE(espace_nom - nom_.size());
+	std::cout << " | " << AFFICHER_ESPACE(espace_horaires - std::to_string(horaires_).size()) << horaires_;
+	std::cout << AFFICHER_ESPACE(espace_horaires);
+	obtenirSpecialite().information();
+	std::cout << endl;
+}
 
 /*********************************************
 *Fonctions:			operator=()
@@ -168,8 +167,6 @@ bool operator==(const Medecin& med1, const Medecin& med2)  {
 *Retour:			-(ostream&)			: stream d'affichage
 *********************************************/
 ostream& operator<<(ostream& out, const Medecin& medecin) {
-	out << "| " << left << setw(20) << medecin.obtenirNom() << right << "| " << left << setw(20) << medecin.obtenirHoraires() << right << "| "
-		<< left << setw(20) << medecin.obtenirSpecialite().obtenirDomaine() << right << "| " << left << setw(20) << medecin.obtenirSpecialite().obtenirNiveau()
-		<< "|" << endl;
+	medecin.
 	return out; 
 }

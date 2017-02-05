@@ -76,10 +76,10 @@ std::ostream& operator<<(std::ostream& o, const Specialite& specialite)
 
 }
 
-//void Specialite::information(const Specialite& specialite) const // A MODIFIER... (si necessaire)
-//{
-//	cout << " | " << specialite.obtenirDomaine() << AFFICHER_ESPACE(espace_domaine - specialite.domaine_.size());
-//	cout << " | " << AFFICHER_ESPACE(espace_niveau - std::to_string(specialite.niveau_).size()) << specialite.niveau_;
-//
-//	cout << AFFICHER_ESPACE(espace_niveau) << " | ";
-//}
+void Specialite::information(const Specialite& specialite) const // A MODIFIER... (si necessaire)
+{
+	cout << " | " << specialite.obtenirDomaine() << AFFICHER_ESPACE(espace_domaine - specialite.domaine_.size());
+	cout << " | " << AFFICHER_ESPACE(espace_niveau - std::to_string(specialite.niveau_).size()) << specialite.niveau_;
+
+	cout << AFFICHER_ESPACE(espace_niveau) << " | ";
+}
