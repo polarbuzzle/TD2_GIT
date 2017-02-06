@@ -63,8 +63,8 @@ bool Personnel::retirerInfirmier(const std::string& nomComplet)
 
 void Personnel::information() const // A MODIFIER...
 {
-	personnel.afficherMedecins();
-	personnel.afficherInfirmiers();
+	this->afficherMedecins();
+	this->afficherInfirmiers();
 }
 
 void Personnel::afficherMedecins() const // A MODIFIER... (si necessaire)
