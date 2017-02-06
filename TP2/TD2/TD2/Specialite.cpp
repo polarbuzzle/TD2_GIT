@@ -3,7 +3,7 @@
 #include <iomanip>
 #include "Const.h"
 
-using namespace std
+using namespace std;
 
 /*********************************************
 *Fonctions:		Constructeur par default
@@ -11,9 +11,8 @@ using namespace std
 *Parametre:		Aucun
 *Retour:		Aucun
 *********************************************/
-Specialite::Specialite()
-{
-	domaine_ = "Aucun";
+Specialite::Specialite() {
+	domaine_ = "Inconnu";
 	niveau_ = 0;
 }
 
@@ -73,7 +72,8 @@ void Specialite::modifierNiveau(unsigned int niveau)
 
 std::ostream& operator<<(std::ostream& o, const Specialite& specialite)
 {
-
+	return o << "| " << std::setw(20) << std::left << specialite.obtenirDomaine() << std::right
+		<< "| " << std::setw(20) << std::left << specialite.obtenirNiveau() << std::right << "|" << std::endl;
 }
 
 void Specialite::information(const Specialite& specialite) const // A MODIFIER... (si necessaire)
