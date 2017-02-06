@@ -168,9 +168,11 @@ bool operator==(const Medecin& med1, const Medecin& med2)  {
 *********************************************/
 ostream& operator<<(ostream& out, const Medecin& medecin) {
 	
-		out << "| " << left << setw(espace_nom) << medecin.obtenirNom() << right << "| " << left << setw(espace_horaires) <<medecin.obtenirHoraires() << right << "| "
-			<< left << setw(espace_domaine) << medecin.obtenirSpecialite().obtenirDomaine() << right << "| " << left << setw(espace_niveau) <<medecin.obtenirSpecialite().obtenirNiveau()
-			<< "|" << endl;
+	out << "| " << medecin.obtenirNom() << AFFICHER_ESPACE(espace_nom - medecin.obtenirNom().size());
+	out << " | " << AFFICHER_ESPACE(espace_horaires - std::to_string(medecin.obtenirHoraires()).size()) << medecin.obtenirHoraires();
+	out << AFFICHER_ESPACE(espace_horaires);
+	out << medecin.obtenirSpecialite();
+	out << endl;
 	
 	return out; 
 }

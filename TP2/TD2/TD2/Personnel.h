@@ -27,17 +27,20 @@ public:
 	Personnel& operator-=(Medecin* medecin);
 	Personnel& operator+=(Infirmier* infirmier);
 	Personnel& operator-=(Infirmier* infirmier);
+
+	friend std::ostream& operator<<(std::ostream& o, const Personnel& personnel);
 		
-	void information() const; // A MODIFIER... (si necessaire)
+	//void information() const; // A MODIFIER... (si necessaire)
 	// _________TP2___________
 
 private:
-	void afficherInfirmiers() const; // A MODIFIER... (si necessaire)
-	void afficherMedecins() const; // A MODIFIER... (si necessaire)
+	//void afficherInfirmiers() const; // A MODIFIER... (si necessaire)
+	//void afficherMedecins() const; // A MODIFIER... (si necessaire)
 	//Attributs
 	vector<Medecin*> medecins_;
 	vector<Infirmier*> infirmiers_;
 	// _________TP2___________
 };
+
 
 #endif

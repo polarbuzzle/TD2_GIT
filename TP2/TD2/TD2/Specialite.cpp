@@ -72,14 +72,15 @@ void Specialite::modifierNiveau(unsigned int niveau)
 
 std::ostream& operator<<(std::ostream& o, const Specialite& specialite)
 {
-	return o << "| " << std::setw(20) << std::left << specialite.obtenirDomaine() << std::right
-		<< "| " << std::setw(20) << std::left << specialite.obtenirNiveau() << std::right << "|" << std::endl;
+	o << " | " << specialite.obtenirDomaine() << AFFICHER_ESPACE(espace_domaine - specialite.obtenirDomaine().size());
+	o << " | " << AFFICHER_ESPACE(espace_niveau - std::to_string(specialite.obtenirNiveau()).size()) << specialite.obtenirNiveau();
+	o << AFFICHER_ESPACE(espace_niveau) << " | ";
+	return o;
 }
 
-void Specialite::information(const Specialite& specialite) const // A MODIFIER... (si necessaire)
-{
-	cout << " | " << specialite.obtenirDomaine() << AFFICHER_ESPACE(espace_domaine - specialite.domaine_.size());
-	cout << " | " << AFFICHER_ESPACE(espace_niveau - std::to_string(specialite.niveau_).size()) << specialite.niveau_;
-
-	cout << AFFICHER_ESPACE(espace_niveau) << " | ";
-}
+//void Specialite::information(const Specialite& specialite) const // A MODIFIER... (si necessaire)
+//{
+//	cout << " | " << specialite.obtenirDomaine() << AFFICHER_ESPACE(espace_domaine - specialite.domaine_.size());
+//	cout << " | " << AFFICHER_ESPACE(espace_niveau - std::to_string(specialite.niveau_).size()) << specialite.niveau_;
+//	cout << AFFICHER_ESPACE(espace_niveau) << " | ";
+//}

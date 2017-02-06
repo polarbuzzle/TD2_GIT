@@ -18,7 +18,7 @@ public:
 	void modifierNiveau(unsigned int niveau);
 	
 
-	void information(const Specialite& specialite) const; // A MODIFIER... (si necessaire) 
+	//void information(const Specialite& specialite) const; // A MODIFIER... (si necessaire) 
 
 	// _________TP2___________
 private:
