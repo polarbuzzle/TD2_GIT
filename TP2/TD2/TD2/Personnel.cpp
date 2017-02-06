@@ -50,7 +50,7 @@ bool Personnel::retirerMedecin(const std::string& nom)
 
 bool Personnel::ajouterInfirmier(Infirmier* infirmier) 
 {
-	medecins_.push_back(infirmier);
+	infirmiers_.push_back(infirmier);
 	
 	return true;
 }
@@ -58,8 +58,10 @@ bool Personnel::ajouterInfirmier(Infirmier* infirmier)
 bool Personnel::retirerInfirmier(const std::string& nomComplet) 
 {
 	for (int i = 0; i < infirmiers_.size(); i++) {
-		if (infirmiers_[i]->obtenirNom == nomComplet)
-			infirmiers_[i].pop_back();
+		if (infirmiers_[i]->obtenirNom == nomComplet) {
+			infirmiers_.erase(infirmiers_.begin() + i); 
+		}
+			
 	}
 	return false;
 }
