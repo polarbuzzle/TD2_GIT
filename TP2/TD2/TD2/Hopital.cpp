@@ -72,6 +72,6 @@ void Hopital::modifierPersonnel(Personnel* nouveau) {
 *Parametre:		-(Personnel*)personnel	: nouveau vecteur personnel
 *Retour:		-Aucun
 *********************************************/
-ostream& operator<<(ostream& out, const Hopital& hopital) {
+ostream& operator<<(ostream& out, Hopital& hopital) {
 	out<<hopital.accederPersonnel();
 }
