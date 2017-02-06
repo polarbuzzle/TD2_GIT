@@ -19,29 +19,28 @@ Personnel::Personnel()
 
 Personnel::~Personnel() 
 {
-	for (unsigned i = 0; i < medecins_.size(); i++)
-	{
-		delete medecins_[i];
-	}
-	for (unsigned i = 0; i < infirmiers_.size(); i++)
-	{
-		delete infirmiers_[i];
-	}
+	
 };
 	
 bool Personnel::ajouterMedecin(Medecin* medecin)  
 {
-	medecins_.push_back(new Medecin(*medecin));
-	return true;
+	bool memeNom = false;
+
+	for (unsigned i = 0; i < medecins_.size(); i++) {
+		if (*medecins_[i] == *medecin)
+			memeNom = true;
+	}
+	if (!memeNom)
+		medecins_.push_back(medecin);
+	return !memeNom;
 }
 
 bool Personnel::retirerMedecin(const std::string& nom)  
 {
 	for (unsigned i = 0; i < medecins_.size(); i++)
 	{
-		if (nom == medecins_[i]->obtenirNom())
+		if (*medecins_[i] == nom)
 		{
-			delete medecins_[i];
 			medecins_.erase(medecins_.begin() + i);
 		}
 	}
@@ -52,14 +51,12 @@ bool Personnel::ajouterInfirmier(Infirmier* infirmier)
 {
 	bool memeNom = false; 
 	for (int i = 0; i < infirmiers_.size(); i++)
-		if ((*infirmiers_[i]) == (*infirmier)) {
+		if (*infirmiers_[i] == *infirmier) {
 			memeNom = true;
-			return false;
 		}
-	if (!memeNom) {
+	if (!memeNom)
 		infirmiers_.push_back(infirmier);
-		return true;
-	}
+	return !memeNom;
 }
 
 bool Personnel::retirerInfirmier(const std::string& nomComplet) 
@@ -103,8 +100,7 @@ void Personnel::afficherMedecins() const // A MODIFIER... (si necessaire)
 	std::cout << AFFICHER_LINE(espacement_medecin + tabMed.size()) << endl;
 	for (size_t i = 0; i < medecins_.size(); i++)
 	{	
-		medecins_[i]->information();
-		std::cout << endl;
+		std::cout << medecins_[i] << std::endl;
 	}
 	std::cout << AFFICHER_LINE(espacement_medecin + tabMed.size()) << endl;
 	std::cout << AFFICHER_ESPACE(espacement_medecin + tabMed.size()) << endl;
@@ -126,8 +122,7 @@ void Personnel::afficherInfirmiers() const // A MODIFIER... (si necessaire)
 
 	for (size_t i = 0; i < infirmiers_.size(); i++)
 	{
-		infirmiers_[i]->information()
-		std::cout << endl;
+		std::cout << infirmiers_[i] << std::endl;
 	}
 
 	std::cout << AFFICHER_LINE(espacement_infirmier + tabInf.size());
