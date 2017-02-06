@@ -12,19 +12,39 @@
 *Retour:		Aucun
 *
 *********************************************/
-Personnel::Personnel() {};
+Personnel::Personnel() 
+{
+	//rien
+};
 
-Personnel::~Personnel() {};
+Personnel::~Personnel() 
+{
+	for (unsigned i = 0; i < medecins_.size(); i++)
+	{
+		delete medecins_[i];
+	}
+	for (unsigned i = 0; i < infirmiers_.size(); i++)
+	{
+		delete infirmiers_[i];
+	}
+};
 	
 bool Personnel::ajouterMedecin(Medecin* medecin)  
 {
-	// A MODIFIER...
+	medecins_.push_back(new Medecin(*medecin));
 	return true;
 }
 
 bool Personnel::retirerMedecin(const std::string& nom)  
 {
-	// A MODIFIER...
+	for (unsigned i = 0; i < medecins_.size(); i++)
+	{
+		if (nom == medecins_[i]->obtenirNom())
+		{
+			delete medecins_[i];
+			medecins_.erase(medecins_.begin() + i);
+		}
+	}
 	return false;
 }
 
@@ -47,8 +67,8 @@ bool Personnel::retirerInfirmier(const std::string& nomComplet)
 
 void Personnel::information() const // A MODIFIER...
 {
-	personnel.afficherMedecins();
-	personnel.afficherInfirmiers();
+	this->afficherMedecins();
+	this->afficherInfirmiers();
 }
 
 void Personnel::afficherMedecins() const // A MODIFIER... (si necessaire)
