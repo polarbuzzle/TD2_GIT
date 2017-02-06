@@ -5,6 +5,13 @@
 #include <iomanip>
 #include "Const.h"
 
+/*********************************************
+*Fonctions:		Constructeur par default
+*Descriptions:	Construit l'objet Personnel aves ses valeurs par defauts
+*Parametre:		Aucun
+*Retour:		Aucun
+*
+*********************************************/
 Personnel::Personnel() {};
 
 Personnel::~Personnel() {};

@@ -34,7 +34,9 @@ public:
 private:
 	void afficherInfirmiers() const; // A MODIFIER... (si necessaire)
 	void afficherMedecins() const; // A MODIFIER... (si necessaire)
-
+	//Attributs
+	vector<Medecin*> medecins_;
+	vector<Infirmier*> infirmiers_;
 	// _________TP2___________
 };
 
