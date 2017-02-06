@@ -50,9 +50,16 @@ bool Personnel::retirerMedecin(const std::string& nom)
 
 bool Personnel::ajouterInfirmier(Infirmier* infirmier) 
 {
-	infirmiers_.push_back(infirmier);
-	
-	return true;
+	bool memeNom = false; 
+	for (int i = 0; i < infirmiers_.size(); i++)
+		if ((*infirmiers_[i]) == (*infirmier)) {
+			memeNom = true;
+			return false;
+		}
+	if (!memeNom) {
+		infirmiers_.push_back(infirmier);
+		return true;
+	}
 }
 
 bool Personnel::retirerInfirmier(const std::string& nomComplet) 
