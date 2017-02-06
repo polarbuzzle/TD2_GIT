@@ -169,7 +169,7 @@ bool operator==(const Medecin& med1, const Medecin& med2)  {
 ostream& operator<<(ostream& out, const Medecin& medecin) {
 	
 		out << "| " << left << setw(espace_nom) << medecin.obtenirNom() << right << "| " << left << setw(espace_horaires) <<medecin.obtenirHoraires() << right << "| "
-			<< left << setw(espace_domaine) << medecin.obtenirSpecialite().obtenirDomaine() << right << "| " << left << setw(espace_niveau) <<medecin.obtenirSpecialite().modifierNiveau()
+			<< left << setw(espace_domaine) << medecin.obtenirSpecialite().obtenirDomaine() << right << "| " << left << setw(espace_niveau) <<medecin.obtenirSpecialite().obtenirNiveau()
 			<< "|" << endl;
 	
 	return out; 

@@ -24,10 +24,12 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Medecin.cpp" />
     <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="Hopital.cpp" />
     <ClCompile Include="Specialite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Const.h" />
+    <ClInclude Include="Hopital.h" />
     <ClInclude Include="Infirmier.h" />
     <ClInclude Include="Medecin.h" />
     <ClInclude Include="Personnel.h" />

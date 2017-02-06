@@ -33,6 +33,9 @@
     <ClCompile Include="commentaires.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Hopital.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Const.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Specialite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hopital.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
