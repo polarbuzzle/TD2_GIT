@@ -126,7 +126,10 @@ void Infirmier::modifierNbChambre(unsigned int nbChambre)
 *********************************************/
 std::ostream& operator<<(std::ostream& o, const Infirmier& infirmier)
 {
-	infirmier.information();
+	o << "| " << infirmier.obtenirNomComplet() << AFFICHER_ESPACE(espace_nom - infirmier.obtenirNom().size());
+	o << " | " << AFFICHER_ESPACE(espace_chambre - std::to_string(infirmier.obtenirNbChambre()).size() / 2);
+	o << infirmier.obtenirNbChambre() << AFFICHER_ESPACE(espace_chambre);
+	o << "|" << std::endl;
 	return o;
 	
 }
@@ -167,10 +170,7 @@ bool operator==(const std::string& nomComplet, const Infirmier& infirmier)
 	return estEgal;
 }
 
-void Infirmier::information() const // A MODIFIER... (si necessaire)
-{
-	std::cout << "| " << this->obtenirNomComplet() << AFFICHER_ESPACE(espace_nom - this->obtenirNom().size());
-	std::cout << " | " << AFFICHER_ESPACE(espace_chambre - std::to_string(this->nbChambre_).size()/2);
-	std::cout << this->nbChambre_ << AFFICHER_ESPACE(espace_chambre);
-	std::cout << "|" << std::endl;
-}
+//void Infirmier::information() const // A MODIFIER... (si necessaire)
+//{
+//	
+//}
