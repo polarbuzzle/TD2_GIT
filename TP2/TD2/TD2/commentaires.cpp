@@ -12,11 +12,11 @@
 *Parametre:		Aucun
 *Retour:			Aucun
 *********************************************/
-Medecin::Medecin() {
-	nom_ = "Inconnu";
-	horaires_ = 0;
-	specialite_ = nullptr;
-}
+//Medecin::Medecin() {
+//	nom_ = "Inconnu";
+//	horaires_ = 0;
+//	specialite_ = nullptr;
+//}
 
 /*********************************************
 *Fonctions:		Medecin::Medecin

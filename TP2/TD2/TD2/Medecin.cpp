@@ -157,7 +157,7 @@ bool operator==(string nom, const Medecin& medecin) {
 *Retour:			-(bool)			: vrai si les nom sont pareils, faut dans le cas inverse
 *********************************************/
 bool operator==(const Medecin& med1, const Medecin& med2)  {
-	return(med1.obtenirNom == med2.obtenirNom);
+	return(med1.obtenirNom() == med2.obtenirNom());
 }
 /*********************************************
 *Fonctions:			operator<<()

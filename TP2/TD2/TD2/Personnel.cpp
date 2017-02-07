@@ -75,7 +75,7 @@ bool Personnel::retirerMedecin(const std::string& nom)
 bool Personnel::ajouterInfirmier(Infirmier* infirmier) 
 {
 	bool memeNom = false; 
-	for (int i = 0; i < infirmiers_.size(); i++)
+	for (unsigned i = 0; i < infirmiers_.size(); i++)
 		if (*infirmiers_[i] == *infirmier) {
 			memeNom = true;
 		}
@@ -93,8 +93,8 @@ bool Personnel::ajouterInfirmier(Infirmier* infirmier)
 bool Personnel::retirerInfirmier(const std::string& nomComplet) 
 {
 	bool estRetire = false;
-	for (int i = 0; i < infirmiers_.size(); i++) {
-		if (infirmiers_[i]->obtenirNom == nomComplet) {
+	for (unsigned i = 0; i < infirmiers_.size(); i++) {
+		if (infirmiers_[i]->obtenirNom() == nomComplet) {
 			infirmiers_.erase(infirmiers_.begin() + i); 
 			estRetire = true;
 		}
