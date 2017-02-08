@@ -1,3 +1,9 @@
+/**********************************************
+* Titre: Travail pratique #1 - Infirmier.cpp
+* Date: 10 janvier 2017
+* Auteur: FERRON Samuel, FONTAINE Jean-Frederic
+*Description: Implementation de la classe Infirmier
+*********************************************/
 #include "Infirmier.h"
 #include <iostream>
 #include <iomanip>
@@ -8,7 +14,6 @@
 *Descriptions:	Construit l'objet Infirmier aves ses valeurs par defauts
 *Parametre:		Aucun
 *Retour:		Aucun
-*
 *********************************************/
 Infirmier::Infirmier()
 {

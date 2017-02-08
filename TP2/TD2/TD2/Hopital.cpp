@@ -35,7 +35,7 @@ Hopital::~Hopital() {
 *Parametre:		Aucun
 *Retour:		-(string)nom_	: Nom de l'hopital 
 *********************************************/
-string Hopital::accederNom() {
+string Hopital::accederNom() const {
 	return nom_; 
 }
 

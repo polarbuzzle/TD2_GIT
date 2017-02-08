@@ -1,3 +1,9 @@
+/**********************************************
+* Titre: Travail pratique #1 - Infirmier.h
+* Date: 8 Fevrier 2017
+* Auteur: FERRON Samuel, FONTAINE Jean-Frederic
+* Description: Definition de la classe Infirmier
+*********************************************/
 #ifndef INFIRMIER_H
 #define INFIRMIER_H
 

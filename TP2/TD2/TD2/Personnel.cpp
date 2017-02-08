@@ -1,3 +1,8 @@
+/**************************************************
+* Fichier : Personnel.cpp
+* Auteur(s) : FERRON Samuel, FONTAINE Jean-Frederic
+* Date: 08 Fevrier 2017
+**************************************************/
 #include "Medecin.h"
 #include "Infirmier.h"
 #include "Personnel.h"
@@ -24,7 +29,7 @@ Personnel::Personnel()
 *********************************************/
 Personnel::~Personnel() 
 {
-	
+	//rien
 };
 	
 /*********************************************
@@ -158,6 +163,12 @@ Personnel& Personnel::operator-=(Infirmier* infirmier)
 	return *this;
 }
 
+/*********************************************
+*Fonctions:		Surcharge d'operateur <<
+*Descriptions:	permet d'afficher l'objet de type personnel
+*Parametre:		-(const Personnel&)personnel : objet de type personnel a droite 
+*Retour:		-(Personnel&)this : le personnel modiffie
+*********************************************/
 std::ostream& operator<<(std::ostream& o, const Personnel& personnel)
 {
 	string tabMed = "Tableau Medecins";

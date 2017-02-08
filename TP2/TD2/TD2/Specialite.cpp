@@ -1,3 +1,8 @@
+/**************************************************
+* Fichier : Specialite.cpp
+* Auteur(s) : FERRON Samuel, FONTAINE Jean-Frederic
+* Date: 08 Fevrier 2017
+**************************************************/
 #include "Specialite.h"
 #include <iostream>
 #include <iomanip>
@@ -70,6 +75,13 @@ void Specialite::modifierNiveau(unsigned int niveau)
 	niveau_ = niveau;
 }
 
+/*********************************************
+*Fonctions:		Operateur <<
+*Descriptions:	Permet d'afficher la specialite
+*Parametre:		-(ostream&)o : flux dans lequel on ajoute les messages
+*Parametre:		-(const Specialite&)specialite : objet de type specialite a droite de l'operateur
+*Retour:		-(ostream&)o : flux dans lequel on a ajoute les messages
+*********************************************/
 std::ostream& operator<<(std::ostream& o, const Specialite& specialite)
 {
 	o << " | " << specialite.obtenirDomaine() << AFFICHER_ESPACE(espace_domaine - specialite.obtenirDomaine().size());
@@ -77,10 +89,3 @@ std::ostream& operator<<(std::ostream& o, const Specialite& specialite)
 	o << AFFICHER_ESPACE(espace_niveau) << " | ";
 	return o;
 }
-
-//void Specialite::information(const Specialite& specialite) const // A MODIFIER... (si necessaire)
-//{
-//	cout << " | " << specialite.obtenirDomaine() << AFFICHER_ESPACE(espace_domaine - specialite.domaine_.size());
-//	cout << " | " << AFFICHER_ESPACE(espace_niveau - std::to_string(specialite.niveau_).size()) << specialite.niveau_;
-//	cout << AFFICHER_ESPACE(espace_niveau) << " | ";
-//}

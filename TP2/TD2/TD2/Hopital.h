@@ -1,3 +1,9 @@
+/**********************************************
+* Titre: Travail pratique #1 - Hopital.h
+* Date: 8 Fevrier 2017
+* Auteur: FERRON Samuel, FONTAINE Jean-Frederic
+* Description: Definition de la classe Hopital
+*********************************************/
 #ifndef HOPITAL_H
 #define HOPITAL_H
 #include "Personnel.h"
@@ -13,7 +19,7 @@ public:
 	//Destructeur
 	~Hopital();
 	//Acceseur de lattribut nom
-	string accederNom();
+	string accederNom() const;
 	//Acceseur de lattribut Personnel
 	Personnel& accederPersonnel() const;
 	//Modificateur permettant de modifier le nom 

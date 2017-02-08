@@ -2,7 +2,7 @@
 * Titre: Travail pratique #1 - Medecin.cpp
 * Date: 10 janvier 2017
 * Auteur: FERRON Samuel, FONTAINE Jean-Frederic
-*Description: Implémentation de la classe Medecin
+* Description: Implémentation de la classe Medecin
 *********************************************/
 #ifndef MEDECIN_H
 #define MEDECIN_H
@@ -16,10 +16,10 @@ class Medecin
 {
 public:
 	// Constructeurs par parametre
-	Medecin(const Medecin& copie); // A MODIFIER... (si necessaire)
-	Medecin(const string& nom, int horaires, Specialite* specialite); // A MODIFIER... (si necessaire)
+	Medecin(const Medecin& copie); 
+	Medecin(const string& nom, int horaires, Specialite* specialite);
 	// Destructeur
-	~Medecin(); // A MODIFIER... (si necessaire)
+	~Medecin();
 	
 	// Methodes d'acces
 	string obtenirNom() const;

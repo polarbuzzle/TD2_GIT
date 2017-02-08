@@ -1,6 +1,7 @@
 /**************************************************
- * Main.cpp
- * Date: 31 janvier 2017
+ * Fichier : Main.cpp
+ * Auteur(s) : FERRON Samuel, FONTAINE Jean-Frederic
+ * Date: 08 Fevrier 2017
 **************************************************/
 
 #include <string>
@@ -11,20 +12,25 @@
 /**
 TODO: Répondre au questions
 1. Quelle est l’utilité de l’opérateur = et du constructeur par copie ?
+
 L'opérateur = nous permet de faire une copie d'un objet. Sans constructeur par copie, ce sera le constructeur par copie
 propre au compilateur g++ qui sera appelé. Ce constructeur effectue bien une constrcution par copie. Par contre, elle sera
 de type shallow. Ceci peut s'averer un problème si l'objet detient des pointeurs car ceux-ci 
 appelle le constructeur défault pour construire son objet, alors il s'agit d'une shallow copy. 
 Le constructeur par copie nous permet donc de faire un deep copy lorsque nous utilisons l'operateur =
+
 2. Dans quel cas est-il absolument nécessaire de les implémenter ?
+
 Lorsque nous manipulons des objets qui possedent des pointeurs, nous avons l'obligation d'implementer 
 un constructeur par copie. Sans le constructeur par copie, nous effectuons une shallow copy, alors les
 objets qui sont copiés auront des pointeurs qui partagent les mêmes adresses. Ceci peut être dangereux
 dans certaines situations.
 
 3. Qu’est-ce qui différencie l’opérateur = du constructeur par copie ?
+
 L'operateur = est une affectation alors que le constructeur par copie est un type de constructeur d'objet; il 
 cree un objet de rien.
+
 **/
 
 using namespace std;
