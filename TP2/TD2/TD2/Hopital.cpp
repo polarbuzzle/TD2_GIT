@@ -67,11 +67,13 @@ void Hopital::modifierPersonnel(Personnel* nouveau) {
 	personnel_ = nouveau; 
 }
 /*********************************************
-*Fonctions:		modifierPersonnel()
-*Descriptions:	Permet de modifier le vecteur de personnel
-*Parametre:		-(Personnel*)personnel	: nouveau vecteur personnel
-*Retour:		-Aucun
+*Fonctions:		operateur <<
+*Descriptions:	Permet d'afficher le personnel de l'hopital
+*Parametre:		-(Hopital&)hopital	: L'hopital que nous voulons afficher
+*Parametre:		-(ostream&)out		: le flux a modiffier
+*Retour:		-(ostream&)out		: le flux de retour
 *********************************************/
 ostream& operator<<(ostream& out, Hopital& hopital) {
-	out<<hopital.accederPersonnel();
+	out << hopital.accederPersonnel();
+	return out;
 }

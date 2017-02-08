@@ -41,8 +41,10 @@ bool Personnel::ajouterMedecin(Medecin* medecin)
 		if (*medecins_[i] == *medecin)
 			memeNom = true;
 	}
-	if (!memeNom)
+	if (!memeNom) {
 		medecins_.push_back(medecin);
+		std::cout << medecin->obtenirNom()	<< " a bien ete ajoute dans le personnel!" << endl;
+	}
 	return !memeNom;
 }
 
@@ -61,6 +63,7 @@ bool Personnel::retirerMedecin(const std::string& nom)
 		{
 			medecins_.erase(medecins_.begin() + i);
 			estRetire = true;
+			std::cout << nom << " a bien ete retire du personnel!" << endl;
 		}
 	}
 	return estRetire;
@@ -79,8 +82,11 @@ bool Personnel::ajouterInfirmier(Infirmier* infirmier)
 		if (*infirmiers_[i] == *infirmier) {
 			memeNom = true;
 		}
-	if (!memeNom)
+	if (!memeNom) {
 		infirmiers_.push_back(infirmier);
+		std::cout << infirmier->obtenirPrenom() << " " << infirmier->obtenirNom()
+			<< " a bien ete ajoute dans le personnel!" << endl;
+	}
 	return !memeNom;
 }
 
@@ -97,6 +103,7 @@ bool Personnel::retirerInfirmier(const std::string& nomComplet)
 		if (infirmiers_[i]->obtenirNom() == nomComplet) {
 			infirmiers_.erase(infirmiers_.begin() + i); 
 			estRetire = true;
+			std::cout << nomComplet << " a bien ete retire du personnel!" << endl;
 		}
 			
 	}
