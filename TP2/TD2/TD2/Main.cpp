@@ -8,6 +8,25 @@
 #include "Personnel.h"
 #include "Hopital.h"
 
+/**
+TODO: Répondre au questions
+1. Quelle est l’utilité de l’opérateur = et du constructeur par copie ?
+L'opérateur = nous permet de faire une copie d'un objet. Sans constructeur par copie, ce sera le constructeur par copie
+propre au compilateur g++ qui sera appelé. Ce constructeur effectue bien une constrcution par copie. Par contre, elle sera
+de type shallow. Ceci peut s'averer un problème si l'objet detient des pointeurs car ceux-ci 
+appelle le constructeur défault pour construire son objet, alors il s'agit d'une shallow copy. 
+Le constructeur par copie nous permet donc de faire un deep copy lorsque nous utilisons l'operateur =
+2. Dans quel cas est-il absolument nécessaire de les implémenter ?
+Lorsque nous manipulons des objets qui possedent des pointeurs, nous avons l'obligation d'implementer 
+un constructeur par copie. Sans le constructeur par copie, nous effectuons une shallow copy, alors les
+objets qui sont copiés auront des pointeurs qui partagent les mêmes adresses. Ceci peut être dangereux
+dans certaines situations.
+
+3. Qu’est-ce qui différencie l’opérateur = du constructeur par copie ?
+L'operateur = est une affectation alors que le constructeur par copie est un type de constructeur d'objet; il 
+cree un objet de rien.
+**/
+
 using namespace std;
 
 int main()
@@ -67,20 +86,8 @@ int main()
 	Medecin md2("Holmes", 35, &sp2);
 	Medecin md3("Jean", 40, &sp3);
 	Medecin md4("Jules", 40, &sp4);
-	Medecin md5("Kyle", 2, &sp5);
-	Medecin md6("House", 80, &sp6);
 
-	//8- Creer un autre medecin Sherlock en utilisant l'opérateur = et en utilisant le medecin existante Sherlock.
-	// Le horaire du deuxieme Sherlock devrai ensuite etre modifie pour une valeur differnte du premier Sherlock
-	Medecin sherlock(md1);
-	sherlock.modifierHoraires(10);
-
-	//9- Creer un autre medecin Holmes en utilisant le constructeur de copie et en utilisant le medecin existante Holmes.
-	// Le horaire du deuxieme Holmes devrai ensuite etre modifie pour une valeur differnte du premier Holmes
-	Medecin holmes(md2);
-	holmes.modifierHoraires(70);
-	
-	//10- Ajoutez les medecins : parmis le personnel de l'hopital Sacré-Coeur : 
+	//8- Ajoutez les medecins : parmis le personnel de l'hopital Sacré-Coeur : 
 	// Dr. Franc, Dr. Sherlock, Dr. Holmes, Dr. Jean, Dr. Jules
 	SacreCoeur.accederPersonnel() += &md0;
 	SacreCoeur.accederPersonnel() += &md1;
@@ -88,13 +95,29 @@ int main()
 	SacreCoeur.accederPersonnel() += &md3;
 	SacreCoeur.accederPersonnel() += &md4;
 
-	// Dr. Sherlock(2), Dr. Holmes(2), Dr. Kyle, Dr. House
+	//9- Creez 2 autres objets du type Medecin � l'aide du constructeur par param�tre avec des valeurs de votre choix
+	// Dr. Kyle : en Sport
+	// Dr. House : en Psychiatrie
+	Medecin md5("Kyle", 2, &sp5);
+	Medecin md6("House", 80, &sp6);
+
+	//10- Creer un autre medecin Sherlock en utilisant l'opérateur = et en utilisant le medecin existante Sherlock.
+	// Le horaire du deuxieme Sherlock devrai ensuite etre modifie pour une valeur differnte du premier Sherlock
+	Medecin sherlock = md1;
+	sherlock.modifierHoraires(10);
+
+	Medecin holmes(md2);
+	holmes.modifierHoraires(70);
+	
+	// 11 - Ajoutez les medecins : parmis le personnel de l'hopital Jean Talen : 
+	// Dr. Sherlock , Dr. Holmes , Dr. Kyle, Dr. House
+	// Dr. Sherlock et Dr. Holmes sont les deux objets crée à partir de l'opératteur =
 	JeanTalon.accederPersonnel() += &sherlock;
 	JeanTalon.accederPersonnel() += &holmes;
 	JeanTalon.accederPersonnel() += &md5;
 	JeanTalon.accederPersonnel() += &md6;
 
-	//11- Retirer le medecin Jean et deux infirmiers de l'hopital Sacré-Coeur et ajouter les
+	//12- Retirer le medecin Jean et deux infirmiers de l'hopital Sacré-Coeur et ajouter les
 	// a l'hopital Jean-talon
 	SacreCoeur.accederPersonnel() -= &md3;
 	SacreCoeur.accederPersonnel() -= &inf0;
@@ -103,7 +126,7 @@ int main()
 	JeanTalon.accederPersonnel() += &inf0;
 	JeanTalon.accederPersonnel() += &inf1;
 
-	//12- Faites afficher l'hopital Sacré-Coeur puis Jean-Talon
+	//13- Faites afficher l'hopital Sacré-Coeur puis Jean-Talon
 	cout << SacreCoeur << endl;
 	cout << JeanTalon << endl;
 
