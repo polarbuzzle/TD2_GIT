@@ -15,16 +15,18 @@ public:
 	//Acceseur de lattribut nom
 	string accederNom();
 	//Acceseur de lattribut Personnel
-	Personnel accederPersonnel();
+	Personnel& accederPersonnel() const;
 	//Modificateur permettant de modifier le nom 
 	void modifierNom(string nom);
 	//Modificateur permettant de modifier le vecteur personnel
 	void modifierPersonnel(Personnel* nouveau);
+
+	friend ostream& operator<<(ostream& out, const Hopital& hopital);
+
 private:
 	//Attributs privees 
 	string nom_; 
 	Personnel* personnel_; 
 };
 //Surcharge d'operateur pour affichage 
-ostream& operator<<(ostream& out, const Hopital& hopital);
 #endif

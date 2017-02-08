@@ -45,7 +45,7 @@ string Hopital::accederNom() {
 *Parametre:		Aucun
 *Retour:		-(Personnel)personnel_	: vecteur du personnel associe a lhopitla 
 *********************************************/
-Personnel Hopital::accederPersonnel() {
+Personnel& Hopital::accederPersonnel() const{
 	return *personnel_;
 }
 /*********************************************
@@ -73,7 +73,7 @@ void Hopital::modifierPersonnel(Personnel* nouveau) {
 *Parametre:		-(ostream&)out		: le flux a modiffier
 *Retour:		-(ostream&)out		: le flux de retour
 *********************************************/
-ostream& operator<<(ostream& out, Hopital& hopital) {
+ostream& operator<<(ostream& out, const Hopital& hopital) {
 	out << hopital.accederPersonnel();
 	return out;
 }

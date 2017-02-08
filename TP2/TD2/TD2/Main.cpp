@@ -104,7 +104,8 @@ int main()
 	JeanTalon.accederPersonnel() += &inf1;
 
 	//12- Faites afficher l'hopital Sacré-Coeur puis Jean-Talon
-	cout << perso1;
+	cout << SacreCoeur << endl;
+	cout << JeanTalon << endl;
 
 	return 0;
 }

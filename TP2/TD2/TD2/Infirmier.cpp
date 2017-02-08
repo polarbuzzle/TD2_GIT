@@ -81,7 +81,7 @@ unsigned int Infirmier::obtenirNbChambre() const
 *********************************************/
 std::string Infirmier::obtenirNomComplet() const
 {
-	std::string nomComplet = prenom_ + "" + nom_;
+	std::string nomComplet = prenom_ + " " + nom_;
 	return nomComplet;
 }
 
@@ -126,10 +126,12 @@ void Infirmier::modifierNbChambre(unsigned int nbChambre)
 *********************************************/
 std::ostream& operator<<(std::ostream& o, const Infirmier& infirmier)
 {
-	o << "| " << infirmier.obtenirNomComplet() << AFFICHER_ESPACE(espace_nom - infirmier.obtenirNom().size());
+	o << "| " << infirmier.obtenirNomComplet() << AFFICHER_ESPACE(espace_nom - (infirmier.obtenirNomComplet().size()));
 	o << " | " << AFFICHER_ESPACE(espace_chambre - std::to_string(infirmier.obtenirNbChambre()).size() / 2);
 	o << infirmier.obtenirNbChambre() << AFFICHER_ESPACE(espace_chambre);
-	o << "|" << std::endl;
+	o << "|";
+
+
 	return o;
 	
 }

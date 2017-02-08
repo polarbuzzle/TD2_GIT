@@ -172,7 +172,7 @@ ostream& operator<<(ostream& out, const Medecin& medecin) {
 	out << " | " << AFFICHER_ESPACE(espace_horaires - std::to_string(medecin.obtenirHoraires()).size()) << medecin.obtenirHoraires();
 	out << AFFICHER_ESPACE(espace_horaires);
 	out << medecin.obtenirSpecialite();
-	out << endl;
+	
 	
 	return out; 
 }

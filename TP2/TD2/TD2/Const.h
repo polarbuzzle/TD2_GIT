@@ -1,5 +1,5 @@
 #pragma once
-const int espace_nom = 20;
+const int espace_nom = 30;
 const int espace_horaires = 10;
 const int espace_domaine = 20;
 const int espace_niveau = 10;
